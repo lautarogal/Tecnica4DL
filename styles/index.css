@@ -1,0 +1,338 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Encode Sans Condensed';
+}
+html, body{
+    height: 100%;
+}
+ 
+body{
+    font-family: Arial, sans-serif;
+    background: #020024;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 77, 1) 51%, rgba(3, 0, 48, 1) 100%);
+    color: white;
+    
+}
+ 
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 60px;
+}
+ 
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    transform: translateY(30px);
+}
+
+.hero-eyebrow{
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+.info img{
+    width: 22vw;
+    max-width: 420px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    display: block;
+    flex-shrink: 0;
+}
+
+.hero-sub{
+    max-width: 560px;
+    line-height: 1.8;
+    opacity: 0.85;
+    font-size: clamp(15px, 0.3vw + 13px, 17px);
+    text-align: center;
+    margin-top: 6px;
+}
+
+.hero-actions{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+    transform: translateY(70px);
+}
+
+.btn-outline{
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.btn-outline:hover{
+    border-color: white;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.hero-stats{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: clamp(24px, 4vw, 64px);
+    margin-top: 44px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.hero-stats li{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.hero-stats li span{
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: clamp(22px, 1.2vw + 16px, 30px);
+    letter-spacing: 0;
+    text-transform: none;
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+ 
+#link-action{
+    background: #414141;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    box-shadow: 0px 5px 20px #414141;
+    display: inline-block;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#link-action:hover{
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 24px #414141;
+}
+ 
+.typing{
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+    animation:
+        escribir 3s steps(19) infinite alternate,
+        cursor .7s infinite;
+}
+ 
+.cursor{
+    animation: parpadear .7s infinite;
+}
+ 
+ 
+.tecnicaturas-section{
+    padding: clamp(60px, 40px + 4vw, 110px) 6% clamp(80px, 60px + 4vw, 120px);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-head{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: clamp(36px, 24px + 3vw, 56px);
+}
+
+.section-eyebrow{
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+.section-head h2{
+    font-size: clamp(32px, 1.6vw + 22px, 46px);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.section-head p{
+    opacity: 0.8;
+}
+
+.tec-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.tec-card{
+    position: relative;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px 0px;
+    padding: 30px 28px;
+    backdrop-filter: blur(2px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tec-card:hover{
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    transition: 0.5s;
+}
+
+.tec-icon{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #020024;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.tec-tag{
+    display: block;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 13px;
+    opacity: 0.6;
+    margin-bottom: 8px;
+}
+
+.tec-card h3{
+    font-size: clamp(20px, 0.6vw + 17px, 24px);
+    margin-bottom: 10px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+.tec-card p{
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.85;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.tec-topics{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tec-topics li{
+    font-size: 13px;
+    padding: 6px 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    opacity: 0.85;
+}
+ 
+@keyframes parpadear{
+    50%{
+        opacity: 0;
+    }
+}
+ 
+h1{
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+ 
+
+@media (min-width: 1025px){
+ 
+    .tec-card{
+        padding: 26px 22px;
+    }
+}
+ 
+ 
+@media (max-width: 1024px){
+    
+    h1{
+        font-size: 150%;
+    }
+    .container{
+        height: 90%;
+        min-height: auto;
+        padding: clamp(12px, 8.36px + 1.14vw, 20px) clamp(12px, 8.36px + 1.14vw, 20px) clamp(24px, 16.73px + 2.27vw, 40px);
+    }
+ 
+    .info{
+        width: 100%;
+        height: auto;
+        transform: none;
+    }
+ 
+    .info img{
+        width: 45vw;
+        max-width: 220px;
+    }
+
+    .hero-actions{
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn-outline,
+    #link-action{
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-stats{
+        gap: 28px;
+        margin-top: 32px;
+    }
+ 
+
+    .typing{
+        width: auto;
+        overflow: visible;
+        white-space: normal;
+        border-right: none;
+        animation: none;
+        text-align: center;
+    }
+ 
+    .cursor{
+        animation: none;
+        display: none;
+    }
+ 
+    #link-action{
+        padding: clamp(8px, 6.7px + 0.6vw, 12px);
+        font-size: clamp(14px, 13.5px + 0.2vw, 16px);
+    }
+
+    .tecnicaturas-section{
+        padding: clamp(40px, 30px + 3vw, 60px) clamp(12px, 8.36px + 1.14vw, 20px) clamp(24px, 16.73px + 2.27vw, 40px);
+    }
+
+    .tec-grid{
+        grid-template-columns: 1fr;
+        gap: clamp(16px, 10px + 2vw, 24px);
+    }
+
+    .tec-card{
+        padding: 24px 20px;
+    }
+}

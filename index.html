@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/font.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/noticias.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ 
+</head>
+<body>
+ 
+ 
+    <div id="navbar-componente"></div>
+ 
+ 
+    <div class="container">
+        <div class="info School-title encode-sans-condensed-bold ">
+            <span class="hero-eyebrow">EESTN N°4 · Berazategui</span>
+            <img src="img/LogoTec4Blanco.png" alt="Logo EESTN N°4">
+            <h1>
+                T<span id="texto"></span><span class="cursor">|</span>
+            </h1>
+            
+            <div class="hero-actions">
+                <a href="tecnicaturas.html" class="btn-outline">Ver tecnicaturas</a>
+                <a href="timeline.html" id="link-action">Nuestra historia</a>
+            </div>
+        </div>
+    </div>
+ 
+ 
+    <section id="tecnicaturas" class="tecnicaturas-section">
+        <div class="section-head">
+            <span class="section-eyebrow">Seleccion educativa</span>
+            <h2>Tecnicaturas</h2>
+            <p>Dos orientaciones, una misma base técnica.</p>
+        </div>
+        <div class="tec-grid">
+            <article class="tec-card">
+                <div class="tec-icon"><span class="material-icons">memory</span></div>
+                <span class="tec-tag">informática</span>
+                <h3>Técnico en Informática</h3>
+                <p>Diseñamos, administramos y mantenemos sistemas: desde redes y bases de datos hasta la gestión de la información en organizaciones.</p>
+                <ul class="tec-topics">
+                    <li>Redes</li>
+                    <li>Sistemas</li>
+                    <li>Hardware</li>
+                </ul>
+            </article>
+            <article class="tec-card">
+                <div class="tec-icon"><span class="material-icons">code</span></div>
+                <span class="tec-tag">programación</span>
+                <h3>Técnico en Programación</h3>
+                <p>Aprendé a pensar y construir software: algoritmos, lógica de programación y desarrollo en distintos lenguajes, aplicados a proyectos reales.</p>
+                <ul class="tec-topics">
+                    <li>Base de datos</li>
+                    <li>Algoritmos</li>
+                    <li>Desarrollo web</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+ 
+ 
+    <section id="noticias" class="noticias-section">
+        <div class="section-head">
+            <span class="section-eyebrow">Al día</span>
+            <h2>Noticias</h2>
+            <p>Novedades, eventos y avisos de la institución.</p>
+        </div>
+ 
+        <div id="noticias-grid" class="noticias-grid">
+        </div>
+ 
+     <!--   <div id="noticias-estado" class="noticias-estado" hidden>
+            <span class="material-icons">error_outline</span>
+            <p>No se pudieron cargar las noticias en este momento.</p>
+        </div>    -->
+    </section>
+    <div id="footer-componente"></div>
+    
+    <script src="scripts/texto.js"></script>
+    <script src="scripts/noticias.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/dropdown.js"></script>
+    <script src="scripts/footer.js"></script>
+ 
+</body>
