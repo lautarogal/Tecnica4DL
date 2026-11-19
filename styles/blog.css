@@ -1,0 +1,132 @@
+.blog-admin {
+    width: min(820px, 90%);
+    margin: 0 auto 80px;
+}
+
+.blog-panel {
+    padding: clamp(24px, 5vw, 42px);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+}
+
+.blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.blog-form label,
+.blog-cover-options legend {
+    font-weight: 600;
+}
+
+.blog-form input:not([type="hidden"]):not([type="radio"]),
+.blog-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    color: white;
+    background: rgba(0, 0, 0, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 6px;
+    font: inherit;
+}
+
+.blog-form input[type="file"] {
+    padding: 9px;
+}
+
+.blog-form input[type="date"] {
+    color-scheme: dark;
+}
+
+.blog-form textarea {
+    resize: vertical;
+    line-height: 1.65;
+}
+
+.blog-form-top,
+.blog-fields-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.blog-fields-row > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blog-form-top p,
+.blog-hint {
+    opacity: 0.72;
+    font-size: 13px;
+}
+
+.blog-logout,
+.blog-secondary-button {
+    align-self: flex-start;
+    color: white;
+    background: #414141;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.blog-cover-options {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.blog-image-choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.blog-image-choice {
+    display: grid;
+    grid-template-columns: auto 84px;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.blog-image-choice img {
+    width: 84px;
+    height: 66px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.blog-image-choice span {
+    grid-column: 2;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.blog-message {
+    margin-bottom: 18px;
+    padding: 14px 18px;
+    background: rgba(65, 110, 75, 0.5);
+    border: 1px solid rgba(180, 255, 190, 0.35);
+    border-radius: 8px;
+}
+
+.blog-message--error {
+    background: rgba(130, 45, 45, 0.5);
+    border-color: rgba(255, 180, 180, 0.4);
+}
+
+@media (max-width: 600px) {
+    .blog-form-top,
+    .blog-fields-row {
+        flex-direction: column;
+    }
+}
