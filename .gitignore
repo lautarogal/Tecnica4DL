@@ -1,0 +1,5 @@
+/data/noticias.sqlite
+/data/noticias.sqlite-*
+/data/tmp-*/
+/uploads/*
+!/uploads/.htaccess
