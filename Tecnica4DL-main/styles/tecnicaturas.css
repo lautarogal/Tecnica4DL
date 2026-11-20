@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Encode Sans Condensed', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #020024;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 77, 1) 51%, rgba(3, 0, 48, 1) 100%);
+    color: white;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.tec-hero {
+    position: relative;
+    padding: clamp(120px, 90px + 8vw, 180px) 6% clamp(70px, 50px + 4vw, 110px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    overflow: hidden;
+}
+
+.tec-hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 42px 42px;
+    -webkit-mask-image: radial-gradient(ellipse 60% 55% at 50% 30%, black 0%, transparent 75%);
+    mask-image: radial-gradient(ellipse 60% 55% at 50% 30%, black 0%, transparent 75%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.tec-hero-eyebrow {
+    position: relative;
+    z-index: 1;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    animation: fadeInUp 0.7s ease both;
+}
+
+.tec-hero-title {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(40px, 3vw + 26px, 68px);
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.tec-hero-sub {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    line-height: 1.8;
+    opacity: 0.85;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.scroll-cue {
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bounce 2s ease-in-out infinite, fadeInUp 0.8s ease 0.3s both;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.scroll-cue:hover {
+    border-color: white;
+    transform: scale(1.08);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tec-main {
+    padding: 0 6% clamp(90px, 60px + 5vw, 140px);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tec-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: clamp(36px, 24px + 3vw, 56px);
+}
+
+.tec-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tec-tab .material-icons {
+    font-size: 20px;
+    opacity: 0.85;
+}
+
+.tec-tab:hover {
+    border-color: rgba(255, 255, 255, 0.45);
+    transform: translateY(-2px);
+}
+
+.tec-tab.active {
+    background: #414141;
+    border-color: white;
+    box-shadow: 0px 5px 20px #414141;
+}
+
+.tec-tab.active .tec-tab-code {
+    opacity: 0.7;
+}
+
+.tec-panel {
+    display: none;
+}
+
+.tec-panel.active {
+    display: block;
+    animation: fadeInUp 0.5s ease both;
+}
+
+.tec-summary {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    margin-bottom: clamp(28px, 20px + 2vw, 40px);
+}
+
+.tec-summary-icon {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #020024;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.05);
+}
+
+.tec-summary-icon .material-icons {
+    font-size: 28px;
+}
+
+.tec-tag {
+    display: inline-block;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 13px;
+    opacity: 0.6;
+    margin-bottom: 6px;
+}
+
+.tec-summary-text h2 {
+    font-size: clamp(24px, 1vw + 19px, 32px);
+    margin-bottom: 8px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+.tec-summary-text p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.85;
+    max-width: 640px;
+}
+
+.tec-stats {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: clamp(28px, 20px + 2vw, 40px);
+}
+
+.tec-stats li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 18px 20px;
+    backdrop-filter: blur(2px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tec-stats li:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.tec-stats .material-icons {
+    font-size: 22px;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+.tec-stat-label {
+    display: block;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 4px;
+}
+
+.tec-stat-value {
+    display: block;
+    font-size: 14.5px;
+    line-height: 1.4;
+}
+
+.tec-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: clamp(32px, 22px + 2vw, 48px);
+}
+
+.tec-block {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 24px 26px;
+    backdrop-filter: blur(2px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tec-block:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.tec-block h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+.tec-block h3 .material-icons {
+    font-size: 20px;
+    opacity: 0.85;
+}
+
+.tec-block p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+.tec-topics {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tec-topics li {
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    opacity: 0.85;
+}
+
+.tec-plan h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(19px, 0.8vw + 15px, 23px);
+    margin-bottom: 18px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+.tec-plan-list {
+    list-style: none;
+    position: relative;
+    padding-left: 26px;
+    border-left: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.tec-plan-item {
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.tec-plan-item::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 22px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #020024;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tec-plan-item.open::before {
+    border-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.tec-plan-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.tec-plan-btn:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.tec-plan-title {
+    flex: 1;
+}
+
+.tec-chevron {
+    font-size: 20px;
+    opacity: 0.7;
+    transition: transform 0.3s ease;
+}
+
+.tec-plan-item.open .tec-chevron {
+    transform: rotate(180deg);
+}
+
+.tec-plan-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.tec-plan-item.open .tec-plan-body {
+    max-height: 400px;
+}
+
+.tec-plan-body ul {
+    list-style: none;
+    padding: 14px 18px 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tec-plan-body li {
+    font-size: 14px;
+    opacity: 0.85;
+    padding-left: 16px;
+    position: relative;
+}
+
+.tec-plan-body li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+@media (min-width: 1025px){
+    .tec-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tec-block {
+        padding: 20px 22px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .tec-hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .tec-main {
+        padding: 0 5% clamp(60px, 40px + 4vw, 90px);
+    }
+
+    .tec-summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .tec-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .tec-two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .tec-plan-list {
+        padding-left: 20px;
+    }
+
+    .tec-plan-item::before {
+        left: -26px;
+    }
+
+    .tec-plan-btn {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+}
+
+@media (max-width: 560px) {
+    .tec-tabs {
+        width: 100%;
+    }
+
+    .tec-tab {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tec-hero-eyebrow,
+    .tec-hero-title,
+    .tec-hero-sub,
+    .scroll-cue,
+    .tec-panel {
+        animation: none !important;
+    }
+
+    .scroll-cue {
+        animation: none !important;
+    }
+
+    .tec-plan-body,
+    .tec-chevron,
+    .tec-tab,
+    .tec-block,
+    .tec-stats li {
+        transition: none !important;
+    }
+}
